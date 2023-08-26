@@ -1,0 +1,33 @@
+[
+    {
+        "courseId": 638,
+        "title": "'course title'",
+        "description": " 'course description'",
+        "price": 100,
+        "imageLink": "'https://linktoimage.com'",
+        "published": true
+    },
+    {
+        "courseId": 655,
+        "title": "'course title'",
+        "description": " 'course description'",
+        "price": 100,
+        "imageLink": "'https://linktoimage.com'",
+        "published": true
+    },
+    {
+        "courseId": 150,
+        "title": "new course",
+        "description": " 'course description'",
+        "price": 11,
+        "imageLink": "'https://linktoimage.com'",
+        "published": true
+    },
+    {
+        "courseId": 494,
+        "title": "him"
+    },
+    {
+        "courseId": 332
+    }
+]

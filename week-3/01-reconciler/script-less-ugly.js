@@ -68,4 +68,4 @@ window.setInterval(() => {
   }
 
   createDomElements(todos)
-}, 5000)
+}, 1000)

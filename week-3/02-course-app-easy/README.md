@@ -49,7 +49,7 @@
  - GET /users/courses
    Description: Lists all the courses.
    Input: Headers: { 'username': 'admin', 'password': 'pass' }
-   Output: { courses: [ { id: 1, title: 'course title', description: 'course description', price: 100, imageLink: 'https://linktoimage.com', published: true }, ... ] }
+   Output: { courses: [ { id: 1, title: 'course title', description: 'course description', price: 100, imageLink: 'https://linktoimage.com', published: true }, ... ]}
  - POST /users/courses/:courseId
    Description: Purchases a course. courseId in the URL path should be replaced with the ID of the course to be purchased.
    Input: Headers: { 'username': 'admin', 'password': 'pass' }

@@ -22,6 +22,7 @@ function createDomElements(data) {
       grandChildElement3.innerHTML = "Delete"
       grandChildElement3.setAttribute("onclick", "deleteTodo(" + item.id + ")")
   
+
       childElement.appendChild(grandChildElement1)
       childElement.appendChild(grandChildElement2)
       childElement.appendChild(grandChildElement3)
@@ -33,7 +34,7 @@ function createDomElements(data) {
   
   window.setInterval(() => {
     let todos = [];
-    for (let i = 0; i<Math.floor(Math.random() * 100); i++) {
+    for (let i = 0; i<Math.ceil(Math.random() * 100); i++) {
       todos.push({
         title: "Go to gym",
         description: "Go to gym form 5",
