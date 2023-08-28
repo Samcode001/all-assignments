@@ -2,7 +2,9 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const fs = require('fs');
 const app = express();
+const cors=require('cors');
 
+app.use(cors());
 app.use(express.json());
 
 let ADMINS = [];
@@ -19,7 +21,7 @@ try {
     USERS = [];
     COURSES = [];
 }
-console.log(ADMINS);
+// console.log(ADMINS);
 
 const SECRET = 'my-secret-key';
 
