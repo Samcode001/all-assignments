@@ -1,6 +1,8 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
+import ShowCourses from "./ShowCourses";
+import CreateCourse from "./CreateCourse";
 
 /// This is the landing page. You need to add a link to the login page here.
 /// Maybe also check from the backend if the user is already logged in and then show them a logout button
@@ -11,6 +13,12 @@ function Landing() {
         <Link to="/register">Register</Link>
         <br/>
         <Link to="/login">Login</Link>
+        <br/>
+        <h1>Our courses</h1>
+        <div>
+            <ShowCourses/>
+        </div>
+        <CreateCourse/>
     </div>
 }
 
