@@ -1,24 +1,30 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 /// File is incomplete. You need to add input boxes to take input for users to login.
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("")
 
-    const navigate=useNavigate();
-    const getLogin=async()=>{
+    const navigate = useNavigate();
+    const getLogin = async () => {
         try {
-            console.log(email,password)
-            const response=await axios.post('http://localhost:3000/admin/login',{
-                username:email,
-                password:password
+            console.log(email, password)
+            const response = await axios.post('http://localhost:3000/admin/login', {
+                username: email,
+                password: password
             })
-            if(response.status===200){
+            if (response.status === 200) {
                 console.log("Logged in");
-                localStorage.setItem('auth',JSON.stringify(response.data.token))
+                localStorage.setItem('auth', JSON.stringify(response.data.token))
+                setTimeout(() => {
+                    localStorage.removeItem('auth');
+                }, 36 * 1000);
                 navigate('/');
+            }
+            else{
+                alert("INvalid credentials");
             }
         } catch (error) {
             console.log(error);

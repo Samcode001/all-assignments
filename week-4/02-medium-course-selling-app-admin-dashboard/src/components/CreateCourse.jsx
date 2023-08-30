@@ -1,12 +1,14 @@
 import React from "react";
 import { useState } from "react";
 import axios from 'axios'
+import { useNavigate } from "react-router-dom";
 /// You need to add input boxes to take input for users to create a course.
 /// I've added one input so you understand the api to do it.
 function CreateCourse() {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("")
 
+    const navigate=useNavigate();
     const setCourse = async () => {
         try {
             const response = await axios.post('http://localhost:3000/admin/courses', {
@@ -19,7 +21,7 @@ function CreateCourse() {
                 console.log("Course added");
                 setTitle("")
                 setDescription("")
-                
+                navigate('/');
             }
         } catch (error) {
             console.log(error);

@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ShowCourses from "./ShowCourses";
 import CreateCourse from "./CreateCourse";
@@ -8,17 +8,23 @@ import CreateCourse from "./CreateCourse";
 /// Maybe also check from the backend if the user is already logged in and then show them a logout button
 /// Logging a user out is as simple as deleting the token from the local storage.
 function Landing() {
+
+    const [auth, setAuth] = useState("")
+    useEffect(() => {
+        setAuth(JSON.parse(localStorage.getItem('auth')))
+    }, [])
+
     return <div>
         <h1>Welcome to course selling website!</h1>
         <Link to="/register">Register</Link>
-        <br/>
+        <br />
         <Link to="/login">Login</Link>
-        <br/>
+        <br />
         <h1>Our courses</h1>
         <div>
-            <ShowCourses/>
+            <ShowCourses />
         </div>
-        <CreateCourse/>
+        <Link to="/about">Create Course</Link>
     </div>
 }
 
